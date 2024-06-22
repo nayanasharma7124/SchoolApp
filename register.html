@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body,
+        html {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            /* Center content vertically */
+            justify-content: center;
+            /* Center content horizontally */
+            background-image: url('https://img.pikbest.com/wp/202405/back-school-rendered-illustration-of-essentials-and-books-for-a-to-education-theme_9854676.jpg!w700wp');
+            background-position: center;
+            background-size: cover;
+            padding-top: 60px;
+        }
+
+        .registration-form {
+            width: 500px;
+            background-color: skyblue;
+            padding: 20px;
+            padding-top: 140px;
+            /* Increase top padding to account for the icon's space */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-bottom: 60px;
+
+        }
+
+        .registration-form input,
+        .registration-form select,
+        .registration-form button {
+            width: 100%;
+            /* Full width */
+            padding: 8px;
+            /* Slightly reduced padding */
+            margin-bottom: 8px;
+            /* Reduced bottom margin to decrease vertical spacing */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .registration-form button {
+            background-color: rgb(106, 228, 106);
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            border: none;
+            width: 150px;
+            /* Explicit width for consistency */
+            padding: 9px;
+            /* Uniform padding */
+            margin: 10px 0;
+            /* Same margin for top and bottom */
+            font-size: 0.9em;
+            /* Keep font size consistent */
+            border-radius: 5px;
+            /* Rounded corners for aesthetics */
+            display: inline-block;
+            /* Allows for alignment adjustments if needed */
+            text-align: center;
+        }
+
+        .registration-form button:hover {
+            background-color: rgb(42, 54, 156);
+        }
+
+        .registration-form button:nth-of-type(2) {
+            background-color: rgb(247, 137, 188);
+            /* For 'Back to Login' button */
+        }
+
+        .registration-form button:nth-of-type(2):hover {
+            background-color: rgb(189, 77, 12);
+        }
+
+        .user-icon {
+            width: 100px;
+            height: 100px;
+            border: 3px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            position: absolute;
+            top: 10px;
+            
+            /* Position the icon above the form */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            display: flex;
+            /* Ensures contents are properly aligned */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="submit-registration.php" method="POST" class="registration-form"> <!-- Update action as needed -->
+        <img src="https://cdn-icons-png.flaticon.com/128/10000/10000919.png" alt="User Icon" class="user-icon">
+        <!-- User icon -->
+        <input type="text" name="firstName" placeholder="Student First Name" required>
+        <input type="text" name="middleName" placeholder="Student Middle Name">
+        <input type="text" name="lastName" placeholder="Student Last Name" required>
+        <input type="tel" name="contact" placeholder="Contact" required>
+        <input type="text" name="address" placeholder="Address" required>
+        <input type="date" name="dob" placeholder="DOB" required>
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <select name="department" required>
+            <option value="">Select Department</option>
+            <option value="cs">Computer Science</option>
+            <option value="ee">Electrical Engineering</option>
+            <!-- Add other departments as needed -->
+        </select>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+        <button type="submit">Submit</button>
+        <button type="button" onclick="window.location.href='Login Page.html'">Back to Login</button>
+    </form>
+    <script>
+        function navigateToDashboard() {
+            window.location.href = 'Login Page.html'; // Redirects the user to dashboard.html
+        }
+    </script>
+</body>
+
+</html>
